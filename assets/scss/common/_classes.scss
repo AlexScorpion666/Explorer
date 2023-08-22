@@ -1,0 +1,56 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.article {
+  padding: 35px 60px;
+  background-color:$color-white;
+
+  &__checker {
+
+    &:checked ~ .article__content {
+      max-height: none;
+    }
+
+    &~ .article__button:before {
+      content: "Continue Reading →";
+    }
+
+    &:checked ~ .article__button:before {
+      content: "Roll Up ←";
+    }
+  }
+
+  &__content {
+    max-width: 662px;
+    color: $color-grey;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: $line-height-xl;
+    max-height: 79px;
+    overflow: hidden;
+
+    @include sm {
+      font-size: 14px;
+      max-height: 60px;
+    }
+  }
+
+  &__button {
+    color: $color-violet;
+    font-family: Lato;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: $line-height-xxlg;
+    cursor: pointer;
+    display: inline-block;
+
+    @include sm {
+      font-size: 15px;
+    }
+  }
+}

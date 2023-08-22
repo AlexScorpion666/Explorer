@@ -1,0 +1,65 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.page-footer {
+  background-color: $color-black;
+
+  &__container {
+    @extend %container-md;
+
+    .footer-content {
+      padding: 55px 0 45px;
+
+      .content-copyright {
+        color: $color-grey-dark;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: $line-height-xxxlg;
+
+        &__link {
+          color: $color-violet;
+          font-family: Lato;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: $line-height-xxxlg;
+        }
+      }
+    }
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-areas: "first first" "second third";
+  gap: 10px;
+
+  @include sm {
+    grid-template-areas: "first" "second" "third";
+    justify-content: center;
+  }
+
+  &__first {
+    grid-area: first;
+    text-align: center;
+    @include sm {
+      max-width: 380px;
+    }
+  }
+
+  &__second {
+    grid-area: second;
+    text-align: right;
+    @include sm {
+      text-align: center;
+    }
+  }
+
+  &__third {
+    grid-area: third;
+    text-align: left;
+    @include sm {
+      text-align: center;
+    }
+  }
+}

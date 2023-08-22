@@ -1,0 +1,128 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.page-main {
+  background-color: $color-white;
+  padding: 85px 0 90px;
+
+  &__container {
+    @extend %container-md;
+
+    .main {
+      &__title {
+        color: $color-grey;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: $line-height-xsm;
+      }
+
+      &__text {
+        margin: 25px 0 50px;
+        color: $color-grey-light;
+        text-align: center;
+        font-family: Lato;
+        font-size: 23px;
+        font-weight: 400;
+        line-height: $line-height-xlg;
+      }
+
+      &-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        row-gap: 35px;
+
+        &__bloc {
+          .bloc-blog {
+            min-height: 190px;
+
+            .blog {
+              &-item {
+                position: relative;
+                display: flex;
+
+                &__img {
+                  position: absolute;
+                  z-index: -1;
+                  width: 100%;
+                  min-height: 190px;
+                  object-fit: cover;
+                  background-color: dimgrey;
+                }
+              }
+
+              &-author {
+                display: grid;
+                grid-template-areas: "logo name" "logo time";
+                justify-content: flex-start;
+                align-items: center;
+                column-gap: 8px;
+                margin-left: 24px;
+                margin-top: 131px;
+
+                &__logo {
+                  grid-area: logo;
+                }
+
+                &__name {
+                  grid-area: name;
+                  color: $color-white;
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: $line-height-xlsm;
+                }
+                
+                &__time {
+                  grid-area: time;
+                  color: $color-white;
+                  font-family: Lato;
+                  font-size: 13px;
+                  font-weight: 400;
+                  line-height: $line-height-xl;
+                }
+              }
+            }
+          }
+
+          .bloc-title {
+            max-width: 300px;
+            margin-top: 23px;
+
+            &__text {
+              padding-right: 10px;
+              color: $color-black;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: $line-height-xxlgm;
+            }
+          }
+        }
+      }
+
+      &-question {
+        margin-top: 56px;
+        text-align: center;
+        font-family: Lato;
+        font-size: 15px;
+        line-height: $line-height-xxxlg;
+
+        &__text {
+          color: $color-grey;
+          font-weight: 400;
+        }
+
+        &__link {
+          display: inline-block;
+          color: $color-violet;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

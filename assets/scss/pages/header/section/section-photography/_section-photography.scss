@@ -1,0 +1,86 @@
+@use "../../../../presets" as *;
+@use "../../../../mixins" as *;
+
+.section-photography {
+
+  .photography-blog {
+    display: flex;
+    flex-direction: column;
+    min-height: 330px;
+
+    .blog-item {
+      position: relative;
+      display: flex;
+      order: -1;
+
+      &__img {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        min-height: 330px;
+        object-fit: cover;
+        background-color: dimgrey;
+      }
+    }
+
+    .blog-author {
+      display: grid;
+      grid-template-areas: "logo name" "logo time";
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 14px;
+      margin-left: 60px;
+      margin-top: 115px;
+
+      @include sm {
+        margin-left: 30px;
+        margin-top: 30px;
+      }
+
+      &__logo {
+        grid-area: logo;
+      }
+
+      &__name {
+        grid-area: name;
+        color: $color-white;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: $line-height-sm;
+      }
+
+      &__time {
+        grid-area: time;
+        color: $color-white;
+        font-family: Lato;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: $line-height-xlg;
+      }
+    }
+
+    &__title {
+      max-width: 510px;
+      margin-left: 60px;
+      margin-top: 20px;
+      padding-right: 60px;
+      color: $color-white;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: $line-height-lg;
+
+      @include sm {
+        font-size: 25px;
+        margin-left: 30px;
+        padding-right: 30px;
+      }
+    }
+
+    &__btn {
+      display: flex;
+      justify-content: flex-end;
+      order: -1;
+      margin: 20px 20px 0 0;
+    }
+  }
+}
