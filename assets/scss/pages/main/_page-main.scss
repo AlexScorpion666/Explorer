@@ -48,6 +48,7 @@
                 display: flex;
 
                 &__img {
+                  display: block;
                   position: absolute;
                   z-index: -1;
                   width: 100%;
@@ -118,7 +119,7 @@
         }
 
         &__link {
-          // display: inline-block;
+          display: inline-block;
           color: $color-violet;
           font-weight: 400;
         }
